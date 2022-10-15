@@ -10,6 +10,8 @@ URL_BASE_FILE=$URL_BASE$VERSION_FIREFOX'/linux-x86_64/en-US/firefox-'$VERSION_FI
 wget $URL_BASE_FILE
 NAME_FILE_FIREFOX='firefox-'$VERSION_FIREFOX'.tar.bz2'
 
+echo 'Limpando arquivos temprarios...'
+rm ./versions_firefox.txt
 echo 'Fechando o Mozilla Firefox...'
 pids_firefox=( $(pgrep -f 'firefox') )
 for pid in "${pids_firefox[@]}"; do
